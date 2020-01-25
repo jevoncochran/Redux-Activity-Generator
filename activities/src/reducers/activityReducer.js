@@ -1,9 +1,15 @@
-import { GET_RANDOM_ACTIVITY_START, GET_RANDOM_ACTIVITY_SUCCESS, TOGGLE_TYPE_MODE } from "../actions";
+import { 
+    GET_RANDOM_ACTIVITY_START, 
+    GET_RANDOM_ACTIVITY_SUCCESS, 
+    TOGGLE_TYPE_MODE,
+    TURN_PARTICIPANT_NUM_MODE_ON 
+} from "../actions";
 
 const initialState = {
     isFetching: false,
     activity: null,
     typeMode: false,
+    participantNumMode: false,
     error: ''
 };
 
@@ -24,6 +30,11 @@ export const activityReducer = (state = initialState, action) => {
             return {
                 ...state,
                 typeMode: true
+            }
+        case TURN_PARTICIPANT_NUM_MODE_ON:
+            return {
+                ...state,
+                participantNumMode: true
             }
         default:
             return state;

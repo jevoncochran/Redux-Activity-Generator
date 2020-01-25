@@ -5,6 +5,7 @@ const NumberOfParticipants = () => {
     return (
         <form>
             <select>
+                <option>How many participants?</option>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -16,7 +17,10 @@ const NumberOfParticipants = () => {
                 <option>9</option>
                 <option>10</option>
             </select>
+            <button>Submit</button>
         </form>
     )
 }
+
+export default NumberOfParticipants;
 

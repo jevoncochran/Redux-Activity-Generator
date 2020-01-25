@@ -6,6 +6,7 @@ import './App.css';
 import Criteria from "./components/Criteria";
 import Activity from "./components/Activity";
 import TypeMenu from "./components/TypeMenu";
+import NumberOfParticipants from "./components/NumberOfParticipants";
 
 function App(props) {
   return (
@@ -19,6 +20,8 @@ function App(props) {
 
       {/* conditionally renders TypeMenu component */}
       {!props.isFetching && !props.activity && props.typeMode && !props.error && <TypeMenu />}
+
+      {!props.isFetching && !props.activity && props.participantNumMode && !props.error && <NumberOfParticipants />}
     </div>
   );
 }
@@ -28,6 +31,7 @@ const mapStateToProps = state => {
     isFetching: state.isFetching,
     activity: state.activity,
     typeMode: state.typeMode,
+    participantNumMode: state.participantNumMode,
     error: state.error
   }
 }
