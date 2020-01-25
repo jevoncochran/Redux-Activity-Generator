@@ -10,8 +10,14 @@ import TypeMenu from "./components/TypeMenu";
 function App(props) {
   return (
     <div className="App">
+
+      {/* initial screen shows Criteria component */}
       <Criteria />
+
+      {/* conditionally renders Activity component */}
       {!props.isFetching && props.activity && !props.error && <Activity />}
+
+      {/* conditionally renders TypeMenu component */}
       {!props.isFetching && !props.activity && props.typeMode && !props.error && <TypeMenu />}
     </div>
   );
