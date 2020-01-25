@@ -19,3 +19,5 @@ const TypeMenu = () => {
         </div>
     )
 }
+
+export default TypeMenu;

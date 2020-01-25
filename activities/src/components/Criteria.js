@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 
-import { getRandom } from "../actions";
+import { getRandom, toggleTypeMode } from "../actions";
 
 const Criteria = props => {
     
@@ -10,11 +10,17 @@ const Criteria = props => {
             <h3>Select your activity by:</h3>
             <ul>
                 <li onClick={props.getRandom}>Random</li>
-                <li>Type</li>
+                <li onClick={props.toggleTypeMode}>Type</li>
                 <li>Number of Participants</li>
             </ul>
         </div>
     )
 }
 
-export default connect(null, { getRandom })(Criteria);
+const mapStateToProps = state => {
+    return {
+        typeMode: state.typeMode
+    }
+}
+
+export default connect(mapStateToProps, { getRandom, toggleTypeMode })(Criteria);
