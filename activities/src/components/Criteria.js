@@ -6,18 +6,16 @@ import { getRandom, toggleTypeMode, turnParticipantNumModeOn } from "../actions"
 const Criteria = props => {
     
     return (
-        <div>
-            <h3>Select your activity by:</h3>
+        <div className="criteria-grid">
+            <h3 className="criteria-header">Select your activity by:</h3>
 
-            {/* unorder list of activity criteria selectors */}
-            <ul>
-                {/* clicking below makes API call to get random activity */}
-                <li onClick={props.getRandom}>Random</li>
-                {/* clicking here turns typeMode on, causing TypeMenu component to render */}
-                <li onClick={props.toggleTypeMode}>Type</li>
-                {/* click here turns participantNumMode, causing NumberofParticipants to render */}
-                <li onClick={props.turnParticipantNumModeOn}>Number of Participants</li>
-            </ul>
+
+            {/* clicking below makes API call to get random activity */}
+            <p className="criteria-1" onClick={props.getRandom}>Random</p>
+            {/* clicking here turns typeMode on, causing TypeMenu component to render */}
+            <p className="criteria-2" onClick={props.toggleTypeMode}>Type</p>
+            {/* click here turns participantNumMode, causing NumberofParticipants to render */}
+            <p className="criteria-3" onClick={props.turnParticipantNumModeOn}>Number of Participants</p>
         </div>
     )
 }

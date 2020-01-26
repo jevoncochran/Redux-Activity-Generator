@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  box-sizing: border-box;
 }
 
 .App-logo {
@@ -36,3 +37,40 @@
     transform: rotate(360deg);
   }
 }
+
+.criteria-grid {
+  width: 100%;
+  display: grid;
+  grid-template-areas: 
+    'header header header'
+    'col1 col2 col3'
+  ;
+  padding: 10px;
+}
+
+.criteria-header {
+  grid-area: header;
+}
+
+.criteria-1 {
+  list-style: none;
+  border: 1px solid black;
+  padding: 10%;
+  grid-area: col1;
+}
+
+.criteria-2 {
+  list-style: none;
+  border: 1px solid black;
+  padding: 10%;
+  grid-area: col2;
+}
+
+.criteria-3 {
+  list-style: none;
+  border: 1px solid black;
+  padding: 10%;
+  grid-area: col3;
+}
+
+

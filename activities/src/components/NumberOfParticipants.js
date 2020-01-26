@@ -8,29 +8,36 @@ const NumberOfParticipants = props => {
 
     const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-    const returnActivity = (e) => {
+    const handleNumberChange = e => setHowMany(e.target.value);
+
+    const returnActivity = e => {
         e.preventDefault();
-        let selected = document.getElementById('opt').selectedIndex.value;
-        setHowMany(selected);
         props.getActivityByParticipants(howMany);
-        console.log('selected: ' + selected);
     }
 
-    useEffect(() => {
-        console.log('from useEffect: ' + howMany);
-    }, [howMany])
+    // const returnActivity = (e) => {
+    //     e.preventDefault();
+    //     let selected = document.getElementById('opt').selectedIndex.value;
+    //     setHowMany(selected);
+    //     props.getActivityByParticipants(howMany);
+    //     console.log('selected: ' + selected);
+    // }
 
-    console.log(returnActivity);
+    // useEffect(() => {
+    //     console.log('from useEffect: ' + howMany);
+    // }, [howMany])
+
+    // console.log(returnActivity);
 
     return (
-        <form>
-            <select id="opt">
+        <form onSubmit={e => returnActivity(e)}>
+            <select id="opt" onChange={handleNumberChange}>
                 <option>How many participants</option>
                {numArr.map(n => (
                    <option key={n} value={n}>{n}</option>
                ))}
             </select>
-            <button onSubmit={e => returnActivity(e)}>Submit</button>
+            <button type="submit">Submit</button>
         </form>
     )
 }

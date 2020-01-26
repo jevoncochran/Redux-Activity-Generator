@@ -15,7 +15,7 @@ export const getActivityByParticipants = num => dispatch => {
     axios.get(`http://www.boredapi.com/api/activity?participants=${num}`)
     .then(res => {
         console.log(res);
-        dispatch({ type: GET_ACTIVITY_BY_PARTICIPANTS_SUCCESS, dispatch: res.data })
+        dispatch({ type: GET_ACTIVITY_BY_PARTICIPANTS_SUCCESS, payload: res.data })
     })
     .catch(err => console.log(err))
 }
