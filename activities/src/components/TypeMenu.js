@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import { getActivityByType } from "../actions";
 
 const TypeMenu = props => {
-    const [activityType, setActivityType] = useState('');
 
     const activityArr = [
         'Education',
@@ -18,11 +17,8 @@ const TypeMenu = props => {
         'Busywork'
     ];
 
-    const returnActivity = (e) => {
-        setActivityType(e.target.textContent.toLowerCase());
-        console.log(e.target.textContent.toLowerCase());
-        console.log(activityType)
-        props.getActivityByType(activityType);
+    const returnActivity = (t) => {
+        props.getActivityByType(t.toLowerCase());
     }
 
     return (
@@ -30,7 +26,7 @@ const TypeMenu = props => {
             <h2>Please select an activity type:</h2>
             <ul>
                 {activityArr.map(type => (
-                    <li key={type} onClick={event => returnActivity(event)}>{type}</li>
+                    <li key={type} onClick={e => returnActivity(type)}>{type}</li>
                 ))}
             </ul>
         </div>

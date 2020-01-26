@@ -8,9 +8,9 @@ export const toggleTypeMode = () => dispatch => {
     dispatch({ type: TOGGLE_TYPE_MODE })
 }
 
-export const getActivityByType = type => dispatch => {
+export const getActivityByType = newType => dispatch => {
     dispatch({ type: GET_ACTIVITY_BY_TYPE_START })
-    axios.get(`http://www.boredapi.com/api/activity?type=${type}`)
+    axios.get(`http://www.boredapi.com/api/activity?type=${newType}`)
     .then(res => {
         // console.log(res);
         dispatch({ type: GET_ACTIVITY_BY_TYPE_SUCCESS, payload: res.data })
