@@ -2,7 +2,9 @@ import {
     GET_RANDOM_ACTIVITY_START, 
     GET_RANDOM_ACTIVITY_SUCCESS, 
     TOGGLE_TYPE_MODE,
-    TURN_PARTICIPANT_NUM_MODE_ON 
+    TURN_PARTICIPANT_NUM_MODE_ON,
+    GET_ACTIVITY_BY_TYPE_START,
+    GET_ACTIVITY_BY_TYPE_SUCCESS 
 } from "../actions";
 
 const initialState = {
@@ -18,7 +20,9 @@ export const activityReducer = (state = initialState, action) => {
         case GET_RANDOM_ACTIVITY_START:
             return {
                 ...state, 
-                isFetching: true
+                isFetching: true,
+                typeMode: false,
+                participantNumMode: false
             }
         case GET_RANDOM_ACTIVITY_SUCCESS:
             return {
@@ -29,12 +33,25 @@ export const activityReducer = (state = initialState, action) => {
         case TOGGLE_TYPE_MODE:
             return {
                 ...state,
-                typeMode: true
+                typeMode: true,
+                participantNumMode: false
             }
         case TURN_PARTICIPANT_NUM_MODE_ON:
             return {
                 ...state,
-                participantNumMode: true
+                participantNumMode: true,
+                typeMode: false
+            }
+        case GET_ACTIVITY_BY_TYPE_START:
+            return {
+                ...state,
+                isFetching: true
+            }
+        case GET_ACTIVITY_BY_TYPE_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                activity: action.payload
             }
         default:
             return state;

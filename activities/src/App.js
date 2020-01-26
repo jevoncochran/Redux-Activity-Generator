@@ -19,9 +19,10 @@ function App(props) {
       {!props.isFetching && props.activity && !props.error && <Activity />}
 
       {/* conditionally renders TypeMenu component */}
-      {!props.isFetching && !props.activity && props.typeMode && !props.error && <TypeMenu />}
+      {!props.isFetching && !props.activity && props.typeMode && !props.participantNumMode && !props.error && <TypeMenu />}
 
-      {!props.isFetching && !props.activity && props.participantNumMode && !props.error && <NumberOfParticipants />}
+      {/* conditionally renders NumberOfParticipants component */}
+      {!props.isFetching && !props.activity && !props.typeMode && props.participantNumMode && !props.error && <NumberOfParticipants />}
     </div>
   );
 }

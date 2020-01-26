@@ -13,8 +13,9 @@ const Criteria = props => {
             <ul>
                 {/* clicking below makes API call to get random activity */}
                 <li onClick={props.getRandom}>Random</li>
-                {/* clicking here turns typeMode on which causes TypeMenu component to render */}
+                {/* clicking here turns typeMode on, causing TypeMenu component to render */}
                 <li onClick={props.toggleTypeMode}>Type</li>
+                {/* click here turns participantNumMode, causing NumberofParticipants to render */}
                 <li onClick={props.turnParticipantNumModeOn}>Number of Participants</li>
             </ul>
         </div>
