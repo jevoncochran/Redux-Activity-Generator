@@ -17,7 +17,7 @@ const TypeMenu = props => {
         'Busywork'
     ];
 
-    const returnActivity = (t) => {
+    const returnActivity = t => {
         props.getActivityByType(t.toLowerCase());
     }
 
@@ -25,8 +25,8 @@ const TypeMenu = props => {
         <div>
             <h2>Please select an activity type:</h2>
             <ul>
-                {activityArr.map(type => (
-                    <li key={type} onClick={e => returnActivity(type)}>{type}</li>
+                {activityArr.map(category => (
+                    <li key={category} onClick={e => returnActivity(category)}>{category}</li>
                 ))}
             </ul>
         </div>

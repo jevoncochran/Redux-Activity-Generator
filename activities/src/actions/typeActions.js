@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export const TOGGLE_TYPE_MODE = 'TOGGLE_TYPE_MODE';
+export const TURN_TYPE_MODE_ON = 'TURN_TYPE_MODE_ON';
 export const GET_ACTIVITY_BY_TYPE_START = 'GET_ACTIVITY_BY_TYPE_START';
 export const GET_ACTIVITY_BY_TYPE_SUCCESS = 'GET_ACTIVITY_BY_TYPE_SUCCESS';
 
 export const toggleTypeMode = () => dispatch => {
-    dispatch({ type: TOGGLE_TYPE_MODE })
+    dispatch({ type: TURN_TYPE_MODE_ON })
 }
 
 export const getActivityByType = newType => dispatch => {

@@ -16,7 +16,7 @@ function App(props) {
       <Criteria />
 
       {/* conditionally renders Activity component */}
-      {!props.isFetching && props.activity && !props.error && <Activity />}
+      {!props.isFetching && props.activity && !props.typeMode && !props.participantNumMode && !props.error && <Activity />}
 
       {/* conditionally renders TypeMenu component */}
       {!props.isFetching && !props.activity && props.typeMode && !props.participantNumMode && !props.error && <TypeMenu />}
