@@ -6,7 +6,7 @@ import { getActivityByParticipants } from "../actions";
 const NumberOfParticipants = props => {
     const [howMany, setHowMany] = useState(null);
 
-    const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const numArr = [1, 2, 3, 4, 5];
 
     const handleNumberChange = e => setHowMany(e.target.value);
 
