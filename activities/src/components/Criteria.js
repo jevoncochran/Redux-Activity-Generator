@@ -12,10 +12,13 @@ const Criteria = props => {
 
             {/* clicking below makes API call to get random activity */}
             <p className="criteria-1" onClick={props.getRandom}>Random</p>
+
             {/* clicking here turns typeMode on, causing TypeMenu component to render */}
             <p className="criteria-2" onClick={props.toggleTypeMode}>Type</p>
+
             {/* click here turns participantNumMode, causing NumberofParticipants to render */}
             <p className="criteria-3" onClick={props.turnParticipantNumModeOn}>Number of Participants</p>
+
         </div>
     )
 }

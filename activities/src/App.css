@@ -38,6 +38,14 @@
   }
 }
 
+p {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
 .criteria-grid {
   width: 100%;
   display: grid;
@@ -60,12 +68,16 @@
   list-style: none;
   padding: 10%;
   grid-area: col1;
+  background: blue;
+  margin: 2%;
 }
 
 .criteria-2 {
   list-style: none;
   padding: 10%;
   grid-area: col2;
+  background: blue;
+  margin: 2%;
 }
 
 .criteria-3 {
@@ -73,6 +85,28 @@
   padding: 10%;
   grid-area: col3;
   min-width: 0;
+  background: blue;
+  margin: 2%;
 }
 
+.type-activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat (4, 1fr);
+  grid-template-areas: 
+    'header header header'
+    'type1 type2 type3'
+    'type4 type5 type6'
+    'type7 type8 type9'
+  ;
+}
+
+.type-activity-header {
+  grid-area: header;
+}
+
+.type-categories {
+  background: lightgray;
+  margin: 2%;
+}
 

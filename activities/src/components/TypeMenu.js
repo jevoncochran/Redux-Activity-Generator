@@ -24,14 +24,12 @@ const TypeMenu = props => {
     }
 
     return (
-        <div>
-            <h2>Please select an activity type:</h2>
-            <ul>
+        <div className="type-activity-grid">
+            <h3 className="type-activity-header">Please select an activity type:</h3>
                 {/* creates <li> for each activity type, giving each one an onClick to make API call based on selection */}
                 {activityArr.map(category => (
-                    <li key={category} onClick={e => returnActivity(category)}>{category}</li>
+                    <p className="type-categories" key={category} onClick={e => returnActivity(category)}>{category}</p>
                 ))}
-            </ul>
         </div>
     )
 }
